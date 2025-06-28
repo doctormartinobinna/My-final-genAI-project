@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St Flairs Awards LTD - Awards Product Showcase</title>
+
+    <link href="images/assets/logo.jpg" rel="icon" />
+    <link href="images/assets/logo.jpg" rel="apple-touch-icon" />
+
+    <style>
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: white;
+        color: #333;
+    }
+
+    nav {
+        background-color: #d9232d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 14px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+        background-color: black;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    header {
+        background-color: #d9232d;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    header img.logo {
+        width: 80px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    /* Hero Section Slider */
+    .hero {
+            position: relative;
+            max-width: 100%;
+            height: 300px;
+            overflow: hidden;
+    }
+    .slides {
+        display: flex;
+        width: 300%;
+        animation: slide 12s infinite;
+    }
+    .slides img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    @keyframes slide {
+        0% {margin-left: 0;}
+        33% {margin-left: -100%;}
+        66% {margin-left: -200%;}
+        100% {margin-left: 0;}
+    }
+    /* About Section */
+    .about {
+        padding: 30px;
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+    }
+    .about h2 {
+        color: #d9232d;
+    }
+    
+   .cta-buttons a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Chatbot Button - Black background */
+.chatbot-btn {
+    background-color: black;
+}
+
+.chatbot-btn:hover {
+    background-color: #333;  /* Darker gray on hover */
+    transform: scale(1.05);
+}
+
+/* Consultation Button - Red background */
+.consult-btn {
+    background-color: black;
+}
+
+.consult-btn:hover {
+    background-color: #333;  /* Dark gray hover */
+    transform: scale(1.05);
+}
+
+    /* Gallery Section */
+    .gallery-section {
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .category-title {
+        background-color: #d9232d;
+        color: white;
+        padding: 10px;
+        margin-top: 30px;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+    }
+    .product-card {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 8px;
+        text-align: center;
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .product-card:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transform: translateY(-5px);
+    }
+    .product-card img {
+        width: 100%;
+        height: auto;
+        max-height: 180px;
+        object-fit: cover;
+    }
+    .product-card h3 {
+        color: #d9232d;
+    }
+    footer {
+        background-color: #d9232d;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+    }
+    @media (max-width: 600px) {
+        .product-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Download Flyer Section */
+    .download-flyer {
+        padding: 30px;
+        text-align: center;
+        background-color: #f9f9f9;
+        margin-top: 30px;
+    }
+
+    .download-flyer h2 {
+        color: #d9232d;
+        margin-bottom: 10px;
+    }
+
+    .download-flyer p {
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+    .download-btn {
+        display: inline-block;
+        background-color: #d9232d;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+        background-color: black;
+    }
+
+    /* Consultation Inquiry Form Section */
+    .consultation-form {
+        padding: 30px;
+        text-align: center;
+        background-color: #fff0f0;
+        margin-top: 30px;
+    }
+
+    .consultation-form h2 {
+        color: #d9232d;
+        margin-bottom: 10px;
+    }
+
+    .consultation-form p {
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .form-placeholder {
+        border: 2px dashed #d9232d;
+        padding: 20px;
+        background: white;
+        color: #888;
+        font-style: italic;
+    }
+
+.flyer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.flyer-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flyer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.flyer-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.flyer-card h3 {
+    color: #d9232d;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.flyer-card .download-btn {
+    display: inline-block;
+    background-color: #d9232d;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.flyer-card .download-btn:hover {
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    .flyer-grid {
+        grid-template-columns: 1fr;
+    }
+    .flyer-card img {
+        height: auto;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#inquiry">Consult Us</a>
+</nav>
+
+<!-- Header with Logo -->
+<header id="home">
+    <!-- <img src="logo.jpg" alt="St Flairs Logo" class="logo"> -->
+    <h1>Welcome to St Flairs Awards LTD Awards Gallery</h1>
+    <p>Explore our finest collection of plaques, crystals, trophies, medals, and lapel pins.</p>
+    <div class="cta-buttons">
+    <a href="#" class="chatbot-btn">If you’re confused, Ask Our Chatbot</a>
+    <a href="#inquiry" class="consult-btn">To Consult Us on Awards and Award Events, Click Here</a>
+</div>
+</header>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <h2>About St Flairs Awards LTD</h2>
+    <p>St Flairs Awards LTD is a leading provider of high-quality award products including plaques, medals, trophies, crystals, and lapel pins. With decades of craftsmanship experience, we pride ourselves in delivering memorable awards that celebrate excellence, achievement, and recognition.</p>
+</section>
+
+<!-- Gallery Section -->
+
+
+    <div class="gallery-section" id="gallery">
+
+        <!-- Plaques -->
+        <div class="category-title">Plaques</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/plaque1.jpg" alt="Wooden Plaque">
+                <h3>Wooden Achievement Plaque</h3>
+                <p>Elegant walnut finish with custom engraving.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/plaque2.jpg" alt="Framed Plaque">
+                <h3>Wooden Framed Awards Plaque</h3>
+                <p>Modern design with customizable front plate.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/plaque3.jpg" alt="Glass Front Plaque">
+                <h3>Glass Front Plaque</h3>
+                <p>Combination of glass and wood for a premium look.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/plaque4.jpg" alt="Marble Finish Plaque">
+                <h3>Marble Finish Plaque</h3>
+                <p>Luxurious marble texture with metallic engraving plate.</p>
+            </div>
+        </div>
+
+        <!-- Crystals -->
+        <div class="category-title">Crystals</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/crystal1.jpg" alt="Diamond Crystal">
+                <h3>Diamond Cut Crystal Trophy</h3>
+                <p>Stunning cut design for top performers.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/crystal2.jpg" alt="Blue Accent Crystal">
+                <h3>Blue Accent Crystal Award</h3>
+                <p>Eye-catching design with customizable text.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/crystal3.jpg" alt="Optical Crystal Tower">
+                <h3>Optical Crystal Tower</h3>
+                <p>Clear tower for corporate milestones and awards.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/crystal4.jpg" alt="Star Crystal Award">
+                <h3>Star Crystal Award</h3>
+                <p>Elegant star-shaped crystal for outstanding achievement.</p>
+            </div>
+        </div>
+
+        <!-- Lapel Pins -->
+        <div class="category-title">Lapel Pins</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/pin1.jpg" alt="Gold Lapel Pin">
+                <h3>Gold Custom Lapel Pin</h3>
+                <p>Perfect for corporate branding and events.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/pin2.jpg" alt="Enamel Pin">
+                <h3>Soft Enamel Lapel Pin</h3>
+                <p>Vibrant colors with detailed designs.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/pin3.jpg" alt="Metal Logo Pin">
+                <h3>Metal Logo Pin</h3>
+                <p>Custom-made metal pin for your brand logo.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/pin4.jpg" alt="Flag Lapel Pin">
+                <h3>Flag Lapel Pin</h3>
+                <p>Patriotic lapel pins for special occasions.</p>
+            </div>
+        </div>
+
+        <!-- Medals -->
+        <div class="category-title">Medals</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/medal1.jpg" alt="Gold Medal">
+                <h3>Gold Medal of Excellence</h3>
+                <p>Shiny gold finish with ribbon included.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/medal2.jpg" alt="Custom Medal">
+                <h3>Custom Event Medal</h3>
+                <p>Personalized medals for sports and events.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/medal3.jpg" alt="Silver Award Medal">
+                <h3>Silver Award Medal</h3>
+                <p>Ideal for runner-up positions and recognition.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/medal4.jpg" alt="Bronze Participation Medal">
+                <h3>Bronze Participation Medal</h3>
+                <p>Great for recognizing participation and effort.</p>
+            </div>
+        </div>
+
+        <!-- Trophies -->
+        <div class="category-title">Trophies</div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/trophy1.jpg" alt="Golden Trophy">
+                <h3>Golden Cup Trophy</h3>
+                <p>Classic design for champions and winners.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/trophy2.jpg" alt="Modern Acrylic Trophy">
+                <h3>Modern Acrylic Trophy</h3>
+                <p>Sleek, contemporary acrylic design.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/trophy3.jpg" alt="Star Performer Trophy">
+                <h3>Star Performer Trophy</h3>
+                <p>Star-shaped award for top achievers.</p>
+            </div>
+            <div class="product-card">
+                <img src="images/trophy4.jpg" alt="Glass Tower Trophy">
+                <h3>Glass Tower Trophy</h3>
+                <p>Elegant glass tower design for premium awards.</p>
+            </div>
+        </div>
+
+
+
+        <section class="download-flyer" id="download">
+        <h2>Download and Market Our Products</h2>
+        <p>Download our professionally designed marketing flyers and promote our award products to your audience or clients.</p>
+
+        <div class="flyer-grid">
+            <div class="flyer-card">
+                <img src="images/flyers/trophyflyers.jpg" alt="Flyer 1">
+                <h3>Trophy Awards Flyer</h3>
+                <a href="images/flyers/trophyflyers.jpg" download class="download-btn">Download PDF</a>
+            </div>
+
+            <div class="flyer-card">
+                <img src="images/flyers/crystaladvert.jpg" alt="Flyer 2">
+                <h3>Crystal Awards Flyer</h3>
+                <a href="images/flyers/crystaladvert.jpg" download class="download-btn">Download PDF</a>
+            </div>
+
+            <div class="flyer-card">
+                <img src="images/flyers/lapelpinadvert.jpg" alt="Flyer 3">
+                <h3>Medals and Lapel Pins Flyer</h3>
+                <a href="images/flyers/lapelpinadvert.jpg" download class="download-btn">Download Flyer</a>
+            </div>
+        </div>
+    </section>
+        
+
+    </div>
+
+
+
+    
+
+    <section class="consultation-form" id="inquiry">
+        <h2>Consultation Inquiry Form</h2>
+        <p>Fill the form below to request a free consultation or make product inquiries. We will get back to you shortly.</p>
+        
+        <!-- Paste your automation/form embed code here -->
+        <div class="form-placeholder">
+            <!-- Example Placeholder -->
+            <p>[Your embedded form will appear here]</p>
+        </div>
+    </section>
+
+
+
+<footer>
+    <p>&copy; 2025 St Flairs Awards LTD. All rights reserved.</p>
+    <p>Contact: info@stflairsglobal.com | Phone: 07067602689</p>
+</footer>
+
+<!-- Chatbot Embed Script Placeholder -->
+<!-- Paste your Botpress or Mira AI embed script here -->
+
+</body>
+</html>
